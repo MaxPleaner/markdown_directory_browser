@@ -1,32 +1,9 @@
-This uses the `redcarpet` gem.
+### How to use:
 
-To build the `md` files into `html`,
+1. write `.md` files inside `drafts/` and `published/`. There can be subfolders.
 
-the `md` files are firsted converted into `html`.
+2. Run `ruby build.rb` to compile `published/` into `compiled/`. This converts the `.md` files to `.html`.
 
-Then, that `html` is added to a `html` boilerplate
+3. `cd compiled/ && file-browser` - this runs the [file-browser](https://www.npmjs.com/package/file-browser) node server. To install `file-browser`, first [make sure npm is installed correctly](https://github.com/sindresorhus/guides/blob/master/npm-global-without-sudo.md), then run `npm install -g file-browser`. 
 
-and moved to the `compiled` directory.
-
------------------
-
-How `redcarpet` works:
-
-`Redcarpet::Render` options (not all of them):
-
-```txt
-      filter_html:     true,
-      hard_wrap:       true, 
-      link_attributes: { rel: 'nofollow', target: "_blank" },
-      space_after_headers: true, 
-      fenced_code_blocks: true
-txt
-
-`Redcarpet::Markdown` options:
-
-```txt
-    
-      autolink:           true,
-      superscript:        true,
-      disable_indented_code_blocks: true
-```
+4. Open `http://localhost:8088` in a browser. 
